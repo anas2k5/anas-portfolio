@@ -1,0 +1,35 @@
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: 28px;
+  align-items: start;
+  margin-top: 18px;
+}
+
+.about-left p {
+  color: var(--muted);
+  font-size: 1rem;
+}
+
+.about-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.about-list li {
+  padding: 8px 0;
+  color: var(--text);       /* FIX: visible text */
+}
+
+.about-list li strong {
+  color: var(--accent);     /* Highlight labels */
+}
+
+@media (max-width: 900px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+  .about-right {
+    margin-top: 16px;
+  }
+}

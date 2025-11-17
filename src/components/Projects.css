@@ -1,0 +1,15 @@
+.projects-section { padding:70px 0; }
+.projects-grid {
+  display:grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 22px;
+  margin-top:12px;
+}
+.project-card { min-height:140px; display:flex; align-items:center; padding:18px; }
+.project-title{ margin-bottom:8px; }
+.project-short{ color:var(--muted); margin-bottom:12px; }
+.project-actions{ margin-top:auto; display:flex; gap:12px; }
+
+@media (max-width:900px){
+  .projects-grid{ grid-template-columns: 1fr; }
+}
