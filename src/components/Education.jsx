@@ -13,8 +13,8 @@ export default function Education() {
           </div>
 
           <div className="edu-right">
-            <div><strong>CGPA</strong> 9.0</div>
-            <div><strong>Year</strong> 2021 — 2025</div>
+            <div><strong>CGPA</strong> 8.8</div>
+            <div><strong>Year</strong> 2022 — 2026</div>
             <div><strong>Location</strong> Nellore, AP</div>
           </div>
         </div>

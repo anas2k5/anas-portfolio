@@ -19,54 +19,29 @@ export default function App() {
     <>
       <Navbar />
       <main>
+        <div className="reveal"><Hero /></div>
 
-        {/* HERO */}
-        <div className="reveal">
-          <Hero />
-        </div>
+        <section className="section reveal"><About /></section>
 
-        {/* ABOUT */}
-        <section className="section reveal">
-          <div className="container">
-            <About />
-          </div>
+        <section className="section reveal" id="education">
+          <Education />
         </section>
 
-        {/* EDUCATION */}
-        <section className="section education-section reveal" id="education">
-          <div className="container">
-            <Education />
-          </div>
+        <section className="section reveal" id="skills">
+          <Skills />
         </section>
 
-        {/* SKILLS */}
-        <section className="section skills-section reveal" id="skills">
-          <div className="container">
-            <Skills />
-          </div>
+        <section className="section reveal" id="experience">
+          <Experience />
         </section>
 
-        {/* EXPERIENCE */}
-        <section className="section experience-section reveal" id="experience">
-          <div className="container">
-            <Experience />
-          </div>
+        <section className="section reveal" id="projects">
+          <Projects />
         </section>
 
-        {/* PROJECTS */}
-        <section className="section projects-section reveal" id="projects">
-          <div className="container">
-            <Projects />
-          </div>
+        <section className="section reveal" id="contact">
+          <Contact />
         </section>
-
-        {/* CONTACT */}
-        <section className="section contact-section reveal" id="contact">
-          <div className="container">
-            <Contact />
-          </div>
-        </section>
-
       </main>
     </>
   );
