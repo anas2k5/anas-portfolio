@@ -22,26 +22,43 @@ const experiences = [
   }
 ];
 
-export default function Experience(){
+export default function Experience() {
   return (
-    <section className="experience-section reveal">
-      <div className="container">
-        <h2>Experience</h2>
+    <section id="experience" className="experience-section">
+      <div className="exp-container">
+        
+        <h2 className="exp-title">Experience</h2>
 
-        <div className="exp-list">
-          {experiences.map((e,i)=>(
-            <div key={i} className="exp-card glass">
-              <div className="exp-left">
-                <h3>{e.company}</h3>
+        <div className="timeline">
+          {experiences.map((e, i) => (
+            <div className="timeline-item" key={i}>
+
+              <div className="timeline-dot"></div>
+
+              <div className="exp-card">
+
+                {/* TOP ROW: COMPANY + DATE */}
+                <div className="exp-header">
+                  <h3>{e.company}</h3>
+                  <span className="exp-period">{e.period}</span>
+                </div>
+
+                {/* ROLE */}
                 <div className="exp-role">{e.role} • Remote</div>
-                <ul>
-                  {e.bullets.map((b,bi)=>(<li key={bi}>{b}</li>))}
+
+                {/* BULLETS */}
+                <ul className="exp-bullets">
+                  {e.bullets.map((b, bi) => (
+                    <li key={bi}>{b}</li>
+                  ))}
                 </ul>
+
               </div>
-              <div className="exp-right">{e.period}</div>
+
             </div>
           ))}
         </div>
+
       </div>
     </section>
   );

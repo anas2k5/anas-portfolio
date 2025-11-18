@@ -1,60 +1,52 @@
-import "./Education.css";
-import { FaUniversity, FaSchool, FaGraduationCap } from "react-icons/fa";
+import "./Experience.css";
 
-export default function Education() {
+const experiences = [
+  {
+    company: "Sopra Steria",
+    role: "Software Developer Intern",
+    period: "Sep 2025 — Nov 2025",
+    bullets: [
+      "Built secure REST APIs using Spring Boot and JWT.",
+      "Optimized PostgreSQL queries and integrated Stripe payments.",
+      "Developed responsive React UI components."
+    ]
+  },
+  {
+    company: "Indian Servers",
+    role: "Web Developer Intern",
+    period: "Jun 2023 — Aug 2023",
+    bullets: [
+      "Developed and optimized UI components to improve load times.",
+      "Worked with React, HTML, CSS and JS to deliver features."
+    ]
+  }
+];
 
-  const data = [
-    {
-      icon: <FaGraduationCap className="edu-icon" />,
-      title: "B.Tech (Computer Science & Engineering)",
-      place: "Narayana Engineering College, Nellore",
-      score: "CGPA: 8.8",
-      year: "2022 — 2026",
-      location: "Nellore, AP"
-    },
-    {
-      icon: <FaUniversity className="edu-icon" />,
-      title: "Intermediate (MPC)",
-      place: "Narayana Junior College, Nellore",
-      score: "Percentage: 86%",
-      year: "2020 — 2022",
-      location: "Nellore, AP"
-    },
-    {
-      icon: <FaSchool className="edu-icon" />,
-      title: "SSC (10th Class)",
-      place: "Ratnam High School",
-      score: "Percentage: 98%",
-      year: "2020",
-      location: "Nellore, AP"
-    }
-  ];
-
+export default function Experience() {
   return (
-    <section className="education-section" id="education">
-      <div className="container">
-        <h2>Education</h2>
+    <section id="experience" className="experience-section">
+      <div className="exp-container">
+        
+        <h2 className="exp-title">Experience</h2>
 
         <div className="timeline">
-          {data.map((item, index) => (
-            <div className="timeline-item" key={index}>
+          {experiences.map((e, i) => (
+            <div className="timeline-item" key={i}>
               <div className="timeline-dot"></div>
-              <div className="timeline-line"></div>
 
-              <div className="timeline-card glass">
-                <div className="edu-icon-box">{item.icon}</div>
-
-                <div className="edu-content">
-                  <h3>{item.title}</h3>
-                  <p className="muted">{item.place}</p>
-
-                  <div className="edu-meta">
-                    <span>{item.score}</span>
-                    <span>{item.year}</span>
-                    <span>{item.location}</span>
-                  </div>
+              <div className="exp-card">
+                <div className="exp-header">
+                  <h3>{e.company}</h3>
+                  <span className="exp-period">{e.period}</span>
                 </div>
 
+                <div className="exp-role">{e.role} • Remote</div>
+
+                <ul className="exp-bullets">
+                  {e.bullets.map((b, bi) => (
+                    <li key={bi}>{b}</li>
+                  ))}
+                </ul>
               </div>
             </div>
           ))}

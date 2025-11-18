@@ -1,20 +1,31 @@
 import "./Skills.css";
-import { 
-  FaJava, FaReact, FaHtml5, FaCss3, FaPython, 
-  FaDatabase, FaGitAlt 
+import {
+  FaJava,
+  FaReact,
+  FaHtml5,
+  FaCss3,
+  FaPython,
+  FaDatabase,
+  FaGitAlt,
 } from "react-icons/fa";
-import { SiSpringboot, SiJavascript, SiPostgresql, SiMysql, SiOpencv, SiTensorflow } from "react-icons/si";
+import {
+  SiSpringboot,
+  SiJavascript,
+  SiPostgresql,
+  SiMysql,
+  SiOpencv,
+  SiTensorflow,
+} from "react-icons/si";
 
 export default function Skills() {
-
   const skillCategories = [
     {
       title: "Programming Languages",
       skills: [
         { name: "Java", icon: <FaJava /> },
         { name: "JavaScript", icon: <SiJavascript /> },
-        { name: "Python", icon: <FaPython /> }
-      ]
+        { name: "Python", icon: <FaPython /> },
+      ],
     },
     {
       title: "Web Technologies",
@@ -22,41 +33,41 @@ export default function Skills() {
         { name: "React JS", icon: <FaReact /> },
         { name: "Spring Boot", icon: <SiSpringboot /> },
         { name: "HTML", icon: <FaHtml5 /> },
-        { name: "CSS", icon: <FaCss3 /> }
-      ]
+        { name: "CSS", icon: <FaCss3 /> },
+      ],
     },
     {
       title: "Databases",
       skills: [
         { name: "PostgreSQL", icon: <SiPostgresql /> },
-        { name: "MySQL", icon: <SiMysql /> }
-      ]
+        { name: "MySQL", icon: <SiMysql /> },
+      ],
     },
     {
       title: "AI / ML Tools",
       skills: [
         { name: "OpenCV", icon: <SiOpencv /> },
-        { name: "TensorFlow", icon: <SiTensorflow /> }
-      ]
+        { name: "TensorFlow", icon: <SiTensorflow /> },
+      ],
     },
     {
       title: "Developer Tools",
       skills: [
         { name: "Git", icon: <FaGitAlt /> },
         { name: "VS Code", icon: "🧩" },
-        { name: "Postman", icon: "📨" }
-      ]
-    }
+        { name: "Postman", icon: "📨" },
+      ],
+    },
   ];
 
   return (
     <section className="skills-section" id="skills">
-      <div className="container">
+      <div className="skills-container">
         <h2 className="skills-title">Skills</h2>
 
         <div className="skills-grid">
           {skillCategories.map((cat, idx) => (
-            <div className="skill-card glass reveal" key={idx}>
+            <div className="skill-card" key={idx}>
               <h3>{cat.title}</h3>
 
               <div className="skill-list">
@@ -67,7 +78,6 @@ export default function Skills() {
                   </div>
                 ))}
               </div>
-
             </div>
           ))}
         </div>

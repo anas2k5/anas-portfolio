@@ -1,58 +1,118 @@
-.nav {
+/* ===============================
+        PREMIUM DARK NAVBAR
+   =============================== */
+
+.navbar {
   position: sticky;
   top: 0;
   z-index: 100;
-  backdrop-filter: blur(12px);
-  background: rgba(4, 10, 20, 0.65);
-  border-bottom: 1px solid rgba(255,255,255,0.06);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+
+  background: rgba(5, 10, 20, 0.65);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+  padding: 12px 0;
+
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.25);
 }
 
-.nav-container {
-  max-width: 1250px;
+.nav-inner {
+  max-width: 1300px;
   margin: auto;
-  padding: 12px 20px;
+  padding: 0 28px;
+
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
+/* LOGO */
 .nav-logo {
-  font-size: 1.3rem;
+  font-size: 1.45rem;
   font-weight: 700;
-  color: white;
+  color: #e8f1ff;
+  letter-spacing: 0.3px;
 }
 
+/* NAV LINKS */
 .nav-links {
   display: flex;
+  align-items: center;
   gap: 32px;
   list-style: none;
 }
 
 .nav-links a {
-  color: #dde7ff;
+  position: relative;
+  color: #c8d7f8;
   text-decoration: none;
-  font-weight: 500;
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 6px 4px;
   transition: 0.25s ease;
 }
 
+/* Hover color */
 .nav-links a:hover {
-  color: #4eb3ff;
+  color: #ffffff;
 }
 
+/* Modern underline animation */
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0%;
+  height: 2px;
+  background: linear-gradient(90deg, #2da9ff, #16d3ff);
+  border-radius: 100px;
+  transition: width 0.25s ease;
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+  width: 100%;
+}
+
+/* Active link */
+.nav-links a.active {
+  color: #ffffff;
+}
+
+/* CONTACT BUTTON */
 .contact-btn {
-  padding: 6px 14px;
-  border-radius: 10px;
-  background: linear-gradient(90deg, #007bff, #2db7ff);
-  color: #fff !important;
+  padding: 8px 16px;
+  border-radius: 12px;
   font-weight: 600;
-  box-shadow: 0 6px 18px rgba(0, 123, 255, 0.25);
+  text-decoration: none;
+
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(6px);
+  color: #e7f3ff;
+
+  transition: 0.25s ease;
+}
+
+.contact-btn:hover {
+  color: white;
+  border-color: #2da9ff;
+  transform: translateY(-2px);
+}
+
+/* Active contact highlight */
+.active-contact {
+  background: linear-gradient(90deg, #2da9ff, #16d3ff) !important;
+  color: white !important;
+  box-shadow: 0 10px 24px rgba(45, 169, 255, 0.25);
 }
 
 /* SOCIAL ICONS */
 .nav-socials {
   display: flex;
-  gap: 16px;
-  font-size: 1.35rem;
+  gap: 20px;
+  font-size: 1.4rem;
 }
 
 .nav-socials a {
@@ -61,5 +121,6 @@
 }
 
 .nav-socials a:hover {
-  color: #00aaff;
+  color: #2da9ff;
+  transform: translateY(-3px);
 }
