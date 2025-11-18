@@ -1,15 +1,89 @@
-.projects-section { padding:70px 0; }
-.projects-grid {
-  display:grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 22px;
-  margin-top:12px;
+.projects {
+  padding: 80px 0;
 }
-.project-card { min-height:140px; display:flex; align-items:center; padding:18px; }
-.project-title{ margin-bottom:8px; }
-.project-short{ color:var(--muted); margin-bottom:12px; }
-.project-actions{ margin-top:auto; display:flex; gap:12px; }
 
-@media (max-width:900px){
-  .projects-grid{ grid-template-columns: 1fr; }
+.section-title {
+  text-align: center;
+  font-size: 2.3rem;
+  font-weight: 700;
+  margin-bottom: 40px;
+  color: var(--text);
+}
+
+/* Grid */
+.projects-grid {
+  display: grid;
+  gap: 35px;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+}
+
+/* Project Card */
+.project-card {
+  padding: 25px;
+  border-radius: var(--radius);
+  background: var(--card-bg);
+  border: 1px solid var(--glass-border);
+  transition: 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 0 20px #00000040;
+}
+
+.project-title {
+  font-size: 1.35rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: var(--text);
+}
+
+/* Description */
+.project-desc {
+  margin: 0 0 12px;
+  font-size: 0.95rem;
+  color: var(--muted);
+  line-height: 1.55;
+}
+
+/* Bullet Points */
+.project-points {
+  padding-left: 20px;
+  margin: 10px 0 18px;
+}
+
+.project-points li {
+  font-size: 0.93rem;
+  color: #b7c5d8;
+  margin-bottom: 6px;
+  line-height: 1.45;
+}
+
+/* Tech badges */
+.project-tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 18px;
+}
+
+.tech-badge {
+  padding: 6px 12px;
+  border-radius: 20px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(45,183,255,0.2);
+  color: #d4e7ff;
+  font-size: 0.82rem;
+}
+
+/* Action buttons */
+.project-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.btn.small {
+  padding: 6px 14px;
+  font-size: 0.85rem;
 }

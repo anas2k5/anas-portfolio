@@ -1,29 +1,67 @@
 import "./About.css";
+import { FiCode, FiAward, FiZap } from "react-icons/fi";
 
 export default function About() {
   return (
-    <section id="about" className="about section reveal">
-      <div className="container">
-        <h2>About Me</h2>
+    <section id="about" className="about-section">
+      <div className="container about-grid">
 
-        <div className="about-left-only">
-          <p>
-            I'm a B.Tech (CSE) student at Narayana Engineering College (CGPA 9.0).
-            I build scalable full-stack applications using Java Spring Boot and React,
-            and I have hands-on experience working with ML frameworks such as YOLOv8
-            and TensorFlow/Keras for real-time intelligent systems.
+        {/* LEFT SIDE TEXT */}
+        <div className="about-left">
+          <h2 className="about-title">About Me</h2>
+
+          <p className="about-desc">
+            I'm a passionate <strong>Full-Stack Developer</strong> specializing in  
+            <strong> Java, Spring Boot, and React</strong>.  
+            I love building scalable, high-performance applications and  
+            working with modern ML frameworks like <strong>YOLOv8</strong>  
+            and <strong>TensorFlow/Keras</strong>.
           </p>
 
-          <p style={{ marginTop: 14 }}>
-            I enjoy solving real-world problems by writing clean, maintainable code
-            and collaborating in fast-paced development environments. I’m currently
-            building advanced projects in full-stack development and AI-driven systems.
+          <p className="about-desc">
+            I enjoy solving real problems with clean, maintainable code and  
+            working in fast-paced engineering environments.  
+            Currently, I’m building advanced full-stack and AI-driven systems.
           </p>
 
-          <p style={{ marginTop: 14, fontWeight: 600, color: "var(--accent)" }}>
-            • Solved 100+ problems on LeetCode.
-          </p>
+          {/* BULLET POINTS */}
+          <ul className="about-points">
+            <li><FiCode /> Built multiple full-stack applications</li>
+            <li><FiZap /> Hands-on experience with real-time AI systems</li>
+            <li><FiAward /> Solved <strong>100+ LeetCode</strong> problems</li>
+          </ul>
         </div>
+
+        {/* RIGHT SIDE INFO BOX */}
+        <div className="about-card">
+          <h3>Quick Info</h3>
+
+          <div className="info-row">
+            <span>Location:</span>
+            <p>Nellore, AP</p>
+          </div>
+
+          <div className="info-row">
+            <span>Education:</span>
+            <p>B.Tech CSE (2022–2026)</p>
+          </div>
+
+          <div className="info-row">
+            <span>Interests:</span>
+            <p>Web Dev, AI Systems, Clean Code</p>
+          </div>
+
+          <div className="info-row">
+            <span>LeetCode:</span>
+            <p>100+ Problems Solved</p>
+          </div>
+
+          <div className="info-row">
+            <span>Strong Areas:</span>
+            <p>Backend, APIs, UI/UX, Problem Solving</p>
+          </div>
+        </div>
+
       </div>
     </section>
   );

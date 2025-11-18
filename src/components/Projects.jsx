@@ -1,58 +1,77 @@
-import React, { useState } from "react";
 import "./Projects.css";
-import ProjectModal from "./ProjectModal";
 
-const projects = [
-  {
-    id: "traffic",
-    title: "Traffic Light Detection System",
-    short: "Real-time detection & classification using YOLOv8 and CNN.",
-    repo: "https://github.com/anas2k5/traffic-light-detection",
-    demo: "",
-    details: [
-      "Real-time detection with YOLOv8 and a CNN classifier.",
-      "Implemented in Python with TensorFlow/Keras & OpenCV.",
-      "Inference optimizations for near real-time performance."
-    ]
-  },
-  {
-    id: "tuternity",
-    title: "TuterNity — Tutoring & Booking Platform",
-    short: "Full-stack platform with role-based auth, bookings, and payments.",
-    repo: "https://github.com/anas2k5/tuternity",
-    demo: "https://tuternity-frontend.vercel.app/",
-    details: [
-      "React frontend + Spring Boot backend + PostgreSQL.",
-      "JWT authentication and role-based access (Admin/Teacher/Student).",
-      "Stripe integration for payments."
-    ]
-  }
-];
-
-export default function Projects(){
-  const [active, setActive] = useState(null);
+export default function Projects() {
+  const projects = [
+    {
+      title: "Traffic Light Detection System",
+      description:
+        "Real-time traffic light detection & classification using YOLOv8 and CNN for smart transportation systems.",
+      tech: ["YOLOv8", "Python", "OpenCV", "TensorFlow", "CNN"],
+      repo: "https://github.com/anas2k5",
+      live: "#",
+      points: [
+        "Implemented YOLOv8 for real-time traffic signal detection.",
+        "Built CNN classifier for improved classification accuracy.",
+        "Processed video streams using OpenCV for frame analysis.",
+        "Optimized model performance for high FPS inference.",
+        "Designed modular architecture for IoT/Edge device deployment."
+      ]
+    },
+    {
+      title: "TuterNity — Tutoring & Booking Platform",
+      description:
+        "A full-stack platform with role-based authentication, bookings, chat system, and Stripe-based payments.",
+      tech: ["React", "Spring Boot", "PostgreSQL", "JWT Auth", "Stripe API"],
+      repo: "https://github.com/anas2k5/tuternity-frontend",  
+      live: "https://tuternity-frontend.vercel.app/",
+      points: [
+        "Developed full-stack architecture using React & Spring Boot.",
+        "Implemented JWT authentication for secure role-based access.",
+        "Designed REST APIs for bookings, scheduling & user workflows.",
+        "Integrated Stripe API for secure online payments.",
+        "Built responsive dashboards for Teachers and Students."
+      ]
+    }
+  ];
 
   return (
-    <section className="projects-section reveal">
+    <section id="projects" className="projects section">
       <div className="container">
-        <h2>Projects</h2>
+        <h2 className="section-title">Projects</h2>
+
         <div className="projects-grid">
-          {projects.map(p=>(
-            <article key={p.id} className="project-card glass">
-              <div className="project-body">
-                <h3 className="project-title">{p.title}</h3>
-                <p className="project-short">{p.short}</p>
-                <div className="project-actions">
-                  <button className="btn small primary" onClick={()=>setActive(p)}>Details</button>
-                  <a className="btn small ghost" href={p.demo||p.repo} target="_blank" rel="noreferrer">Open</a>
-                </div>
+          {projects.map((p, idx) => (
+            <div className="project-card glass reveal" key={idx}>
+              
+              <h3 className="project-title">{p.title}</h3>
+
+              <p className="project-desc">{p.description}</p>
+
+              <ul className="project-points">
+                {p.points.map((pt, i) => (
+                  <li key={i}>{pt}</li>
+                ))}
+              </ul>
+
+              <div className="project-tech">
+                {p.tech.map((t, i) => (
+                  <span className="tech-badge" key={i}>{t}</span>
+                ))}
               </div>
-            </article>
+
+              <div className="project-actions">
+                <a href={p.repo} target="_blank" className="btn primary small">
+                  Repository
+                </a>
+                <a href={p.live} target="_blank" className="btn ghost small">
+                  Live Demo
+                </a>
+              </div>
+
+            </div>
           ))}
         </div>
       </div>
-
-      <ProjectModal open={!!active} project={active} onClose={()=>setActive(null)} />
     </section>
   );
 }
