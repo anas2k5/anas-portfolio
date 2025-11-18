@@ -5,12 +5,12 @@ import "./Navbar.css";
 export default function Navbar() {
   const [activeSection, setActiveSection] = useState("home");
 
-  // Highlight active section while scrolling
+  // Detect active section while scrolling
   useEffect(() => {
     const sections = document.querySelectorAll("section[id]");
 
     const handleScroll = () => {
-      let scrollPos = window.scrollY + 120;
+      let scrollPos = window.scrollY + 140; // improved accuracy
 
       sections.forEach((sec) => {
         if (
@@ -31,23 +31,19 @@ export default function Navbar() {
       <div className="nav-inner">
 
         {/* LOGO */}
-        <div className="nav-logo">Syed Anas</div>
+        <div className="nav-logo">
+          <a href="#home">Syed Anas</a>
+        </div>
 
-        {/* NAV LINKS */}
+        {/* MENU */}
         <ul className="nav-links">
-          {[
-            { id: "home", label: "Home" },
-            { id: "about", label: "About" },
-            { id: "skills", label: "Skills" },
-            { id: "experience", label: "Experience" },
-            { id: "projects", label: "Projects" },
-          ].map((item) => (
-            <li key={item.id}>
+          {["home", "about", "skills", "experience", "projects"].map((id) => (
+            <li key={id}>
               <a
-                href={`#${item.id}`}
-                className={activeSection === item.id ? "active" : ""}
+                href={`#${id}`}
+                className={activeSection === id ? "active" : ""}
               >
-                {item.label}
+                {id.charAt(0).toUpperCase() + id.slice(1)}
               </a>
             </li>
           ))}
@@ -55,7 +51,9 @@ export default function Navbar() {
           <li>
             <a
               href="#contact"
-              className={`contact-btn ${activeSection === "contact" ? "active-contact" : ""}`}
+              className={`contact-btn ${
+                activeSection === "contact" ? "active-contact" : ""
+              }`}
             >
               Contact
             </a>
@@ -67,22 +65,20 @@ export default function Navbar() {
           <a
             href="https://github.com/anas2k5"
             target="_blank"
-            rel="noreferrer"
-            aria-label="GitHub"
+            rel="noopener noreferrer"
+            aria-label="GitHub Profile"
           >
             <FiGithub />
           </a>
-
           <a
             href="https://www.linkedin.com/in/anas-syed-211816274/"
             target="_blank"
-            rel="noreferrer"
-            aria-label="LinkedIn"
+            rel="noopener noreferrer"
+            aria-label="LinkedIn Profile"
           >
             <FiLinkedin />
           </a>
         </div>
-
       </div>
     </nav>
   );

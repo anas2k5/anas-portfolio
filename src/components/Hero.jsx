@@ -1,39 +1,55 @@
+// Hero.jsx
+import React from "react";
 import "./Hero.css";
-import profile from "../assets/profile.jpg";
+import profile from "../assets/profile.jpg"; // adjust path if needed
 
 export default function Hero() {
   return (
-    <section id="home" className="hero-section">
-      <div className="hero-wrapper">
+    <section id="home" className="hero-section" aria-label="Home">
+      <div className="hero-inner container">
+        <div className="hero-top">
+          {/* Avatar */}
+          <div className="hero-avatar">
+            <img src={profile} alt="Syed Anas" className="avatar-img" />
+            <span className="avatar-ring"></span>
+          </div>
 
-        {/* Avatar */}
-        <div className="hero-avatar">
-          <img src={profile} alt="Syed Anas" />
-          <div className="avatar-glow"></div>
+          {/* Text */}
+          <h1 className="hero-title">
+            Hi, I'm <span className="hero-name">Syed Anas</span>
+          </h1>
+
+          <p className="hero-role">
+            Java Full-Stack Developer • Spring Boot • React
+          </p>
+
+          <p className="hero-desc">
+            I build scalable Java-based full-stack applications using Spring
+            Boot, React, and cloud-ready backend design. Focused on clean
+            architecture, performance, and turning ideas into reliable
+            real-world systems.
+          </p>
+
+          {/* CTA Buttons */}
+          <div className="hero-cta">
+            <a href="#projects" className="btn btn-primary">
+              See Projects
+            </a>
+
+            <a href="#contact" className="btn btn-ghost">
+              Contact Me
+            </a>
+
+            {/* NEW Download Resume Button */}
+            <a
+              href="/Syed_Anas_Resume.pdf"
+              download="Syed_Anas_Resume.pdf"
+              className="btn btn-outline"
+            >
+              Download Resume
+            </a>
+          </div>
         </div>
-
-        {/* Heading */}
-        <h1 className="hero-title">
-          Hi, I'm <span className="hero-highlight">Syed Anas</span>
-        </h1>
-
-        {/* Subheading */}
-        <h3 className="hero-subtitle">
-          Full Stack Developer • Java • Spring Boot • React
-        </h3>
-
-        {/* Description */}
-        <p className="hero-description">
-          I build scalable, high-performance web apps and AI-powered systems.  
-          Passionate about clean UI, problem-solving, and modern engineering practices.
-        </p>
-
-        {/* Buttons */}
-        <div className="hero-actions">
-          <a href="#projects" className="btn btn-primary">See Projects</a>
-          <a href="#contact" className="btn btn-secondary">Contact Me</a>
-        </div>
-
       </div>
     </section>
   );

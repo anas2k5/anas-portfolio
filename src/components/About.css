@@ -1,47 +1,56 @@
 /* ===============================
-          ABOUT SECTION
+          ABOUT SECTION (Premium)
    =============================== */
 
 .about-section {
   padding: 120px 0;
+  background: transparent;
+  color: var(--text);
 }
 
+/* layout container */
 .about-container {
   display: flex;
-  gap: 60px;
+  gap: 56px;
   align-items: flex-start;
   justify-content: space-between;
   max-width: 1200px;
-  margin: auto;
+  margin: 0 auto;
   padding: 0 20px;
 }
 
-/* LEFT SIDE */
+/* LEFT */
 .about-left {
   flex: 1.6;
+  min-width: 320px;
 }
 
+/* Title */
 .about-title {
   font-size: 2.6rem;
   font-weight: 800;
-  margin-bottom: 20px;
+  margin-bottom: 18px;
   letter-spacing: -0.5px;
   color: #e9f2ff;
 }
 
+/* Paragraphs */
 .about-desc {
-  color: #c9d6f1;
-  margin-bottom: 18px;
+  color: #cbd8f5;
+  margin-bottom: 16px;
   line-height: 1.7;
-  font-size: 1.1rem;
-  max-width: 90%;
+  font-size: 1.06rem;
+  max-width: 100%;
 }
 
-/* BULLET POINTS */
+/* bullets (feature list) */
 .about-points {
   list-style: none;
   padding: 0;
-  margin-top: 28px;
+  margin-top: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 }
 
 .about-points li {
@@ -49,91 +58,101 @@
   align-items: center;
   gap: 14px;
 
-  background: rgba(255, 255, 255, 0.04);
-  padding: 14px 18px;
-  margin-bottom: 12px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.016), rgba(0,0,0,0.03));
+  padding: 12px 16px;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.04);
 
-  border-radius: 14px;
-  border: 1px solid rgba(255, 255, 255, 0.06);
-
-  color: #dce7ff;
+  color: #dbe9ff;
   font-weight: 500;
-
-  backdrop-filter: blur(8px);
-  transition: 0.25s ease;
-}
-
-.about-points li:hover {
-  transform: translateX(6px);
-  border-color: rgba(45, 169, 255, 0.4);
-  box-shadow: 0 6px 20px rgba(0, 123, 255, 0.15);
+  transition: transform .22s ease, box-shadow .22s ease, border-color .22s ease;
 }
 
 .about-points li svg {
   color: #2da9ff;
-  font-size: 1.3rem;
+  font-size: 1.22rem;
 }
 
-/* RIGHT SIDE : GLASS CARD */
+.about-points li:hover {
+  transform: translateX(6px);
+  box-shadow: 0 12px 30px rgba(6,30,50,0.45);
+  border-color: rgba(45,169,255,0.28);
+}
+
+/* RIGHT - INFO CARD (aside for semantics) */
 .about-card {
   flex: 1;
-  padding: 32px;
-  border-radius: 20px;
+  min-width: 260px;
+  padding: 28px;
+  border-radius: 16px;
 
   background: linear-gradient(
       180deg,
-      rgba(255, 255, 255, 0.04),
-      rgba(0, 0, 0, 0.1)
-    ),
-    rgba(255, 255, 255, 0.03);
+      rgba(255,255,255,0.03),
+      rgba(0,0,0,0.06)
+    );
+  border: 1px solid rgba(255,255,255,0.04);
+  box-shadow: 0 10px 40px rgba(0,0,0,0.36);
+  backdrop-filter: blur(8px);
 
-  border: 1px solid rgba(255, 255, 255, 0.06);
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.35);
-  backdrop-filter: blur(10px);
-
-  transition: 0.3s ease;
+  transition: transform .24s ease, box-shadow .24s ease;
 }
 
 .about-card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
+  box-shadow: 0 22px 60px rgba(1,12,26,0.55);
 }
 
 .card-title {
-  font-size: 1.3rem;
+  font-size: 1.18rem;
   font-weight: 700;
-  margin-bottom: 22px;
-  color: #e8f1ff;
+  margin-bottom: 18px;
+  color: #e8f4ff;
 }
 
-/* INFO ROWS */
+/* info rows inside card */
 .info-row {
-  margin-bottom: 18px;
+  margin-bottom: 14px;
 }
 
 .info-row span {
   display: block;
-  font-size: 0.88rem;
-  color: #8fa4ca;
+  font-size: 0.82rem;
+  color: #8fa8c9;
   letter-spacing: 0.5px;
   text-transform: uppercase;
+  margin-bottom: 6px;
 }
 
 .info-row p {
-  margin-top: 4px;
-  font-size: 1.05rem;
-  color: #e5ecff;
-  line-height: 1.4;
+  margin: 0;
+  font-size: 1.02rem;
+  color: #e6f3ff;
+  line-height: 1.45;
 }
 
-/* RESPONSIVE */
+/* responsive adjustments */
+@media (max-width: 1000px) {
+  .about-container {
+    gap: 32px;
+  }
+}
+
 @media (max-width: 900px) {
   .about-container {
     flex-direction: column;
-    gap: 40px;
+    gap: 28px;
+  }
+
+  .about-title {
+    font-size: 2.2rem;
   }
 
   .about-desc {
-    max-width: 100%;
+    font-size: 1rem;
+  }
+
+  .about-card {
+    padding: 22px;
   }
 }

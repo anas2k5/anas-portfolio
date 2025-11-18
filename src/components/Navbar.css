@@ -1,21 +1,23 @@
 /* ===============================
-        PREMIUM DARK NAVBAR
+      PREMIUM GLASS NAVBAR
    =============================== */
 
 .navbar {
   position: sticky;
   top: 0;
-  z-index: 100;
+  z-index: 200;
+
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
 
-  background: rgba(5, 10, 20, 0.65);
+  background: rgba(6, 12, 22, 0.55);
   border-bottom: 1px solid rgba(255, 255, 255, 0.04);
-  padding: 12px 0;
 
-  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.25);
+  padding: 12px 0;
+  box-shadow: 0 8px 26px rgba(0, 0, 0, 0.32);
 }
 
+/* Inner container */
 .nav-inner {
   max-width: 1300px;
   margin: auto;
@@ -26,15 +28,18 @@
   justify-content: space-between;
 }
 
-/* LOGO */
-.nav-logo {
+/* Logo */
+.nav-logo a {
   font-size: 1.45rem;
-  font-weight: 700;
-  color: #e8f1ff;
-  letter-spacing: 0.3px;
+  font-weight: 800;
+  text-decoration: none;
+  background: linear-gradient(90deg, #2da9ff, #16d3ff);
+  -webkit-background-clip: text;
+  color: transparent;
+  letter-spacing: 0.5px;
 }
 
-/* NAV LINKS */
+/* Menu links */
 .nav-links {
   display: flex;
   align-items: center;
@@ -44,7 +49,7 @@
 
 .nav-links a {
   position: relative;
-  color: #c8d7f8;
+  color: #c0d3f8;
   text-decoration: none;
   font-weight: 600;
   font-size: 1rem;
@@ -57,7 +62,7 @@
   color: #ffffff;
 }
 
-/* Modern underline animation */
+/* Modern glowing underline */
 .nav-links a::after {
   content: "";
   position: absolute;
@@ -67,7 +72,7 @@
   height: 2px;
   background: linear-gradient(90deg, #2da9ff, #16d3ff);
   border-radius: 100px;
-  transition: width 0.25s ease;
+  transition: width 0.3s ease;
 }
 
 .nav-links a:hover::after,
@@ -75,24 +80,23 @@
   width: 100%;
 }
 
-/* Active link */
+/* Color for active link */
 .nav-links a.active {
   color: #ffffff;
 }
 
-/* CONTACT BUTTON */
+/* Contact Button */
 .contact-btn {
-  padding: 8px 16px;
+  padding: 8px 18px;
   border-radius: 12px;
   font-weight: 600;
-  text-decoration: none;
 
-  background: rgba(255, 255, 255, 0.03);
+  background: rgba(255, 255, 255, 0.04);
   border: 1px solid rgba(255, 255, 255, 0.08);
-  backdrop-filter: blur(6px);
-  color: #e7f3ff;
 
-  transition: 0.25s ease;
+  backdrop-filter: blur(8px);
+  color: #e7f3ff;
+  transition: 0.25s;
 }
 
 .contact-btn:hover {
@@ -101,14 +105,14 @@
   transform: translateY(-2px);
 }
 
-/* Active contact highlight */
+/* Highlight contact when active */
 .active-contact {
   background: linear-gradient(90deg, #2da9ff, #16d3ff) !important;
-  color: white !important;
-  box-shadow: 0 10px 24px rgba(45, 169, 255, 0.25);
+  color: #02111b !important;
+  box-shadow: 0 10px 26px rgba(45, 169, 255, 0.25);
 }
 
-/* SOCIAL ICONS */
+/* Social icons */
 .nav-socials {
   display: flex;
   gap: 20px;
@@ -123,4 +127,15 @@
 .nav-socials a:hover {
   color: #2da9ff;
   transform: translateY(-3px);
+}
+
+/* Mobile responsive */
+@media (max-width: 900px) {
+  .nav-links {
+    gap: 22px;
+  }
+
+  .nav-logo a {
+    font-size: 1.3rem;
+  }
 }

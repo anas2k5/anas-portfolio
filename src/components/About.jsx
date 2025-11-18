@@ -11,28 +11,28 @@ export default function About() {
           <h2 className="about-title">About Me</h2>
 
           <p className="about-desc">
-            I'm a passionate <strong>Full-Stack Developer</strong> specializing in  
-            <strong> Java, Spring Boot, and React</strong>. I love building scalable,  
-            high-performance applications and working with modern ML frameworks  
-            like <strong>YOLOv8</strong> and <strong>TensorFlow/Keras</strong>.
+            I’m a final-year <strong>Computer Science & Engineering</strong> student and a
+            <strong> Java Full-Stack Developer</strong> specializing in Spring Boot, REST APIs,
+            and React. I build scalable, maintainable applications and enjoy integrating cloud
+            practices for reliable deployments.
           </p>
 
           <p className="about-desc">
-            I enjoy solving real problems with clean, maintainable code and  
-            working in fast-paced engineering environments. Currently, I’m  
-            building advanced full-stack and AI-driven systems.
+            I also work with AI/ML tools like <strong>YOLOv8</strong>, <strong>TensorFlow</strong>,
+            and <strong>OpenCV</strong> for intelligent systems. I focus on clean architecture,
+            efficient backend design, and polished user experiences.
           </p>
 
           {/* BULLET POINTS */}
           <ul className="about-points">
-            <li><FiCode /> Built multiple full-stack applications</li>
-            <li><FiZap /> Hands-on experience with real-time AI systems</li>
-            <li><FiAward /> Solved <strong>100+ LeetCode</strong> problems</li>
+            <li><FiCode /> Built multiple full-stack applications (React + Spring Boot)</li>
+            <li><FiZap /> Hands-on experience with real-time AI/ML systems and OpenCV</li>
+            <li><FiAward /> Solved <strong>100+ LeetCode</strong> problems — strong problem solving</li>
           </ul>
         </div>
 
         {/* RIGHT : INFO CARD */}
-        <div className="about-card">
+        <aside className="about-card">
           <h3 className="card-title">Quick Info</h3>
 
           <div className="info-row">
@@ -47,7 +47,7 @@ export default function About() {
 
           <div className="info-row">
             <span>Interests</span>
-            <p>Web Dev, AI Systems, Clean Code</p>
+            <p>Web Dev • AI Systems • Cloud • Clean Code</p>
           </div>
 
           <div className="info-row">
@@ -57,9 +57,9 @@ export default function About() {
 
           <div className="info-row">
             <span>Strong Areas</span>
-            <p>Backend, APIs, UI/UX, Problem Solving</p>
+            <p>Backend, APIs, UI/UX, System Design</p>
           </div>
-        </div>
+        </aside>
 
       </div>
     </section>
