@@ -1,88 +1,119 @@
+/* ============================
+   EDUCATION SECTION
+   ============================ */
+
 .education-section {
-  padding: 70px 0;
+  padding: 110px 0;
+  color: var(--text);
+}
+
+.edu-container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 20px;
+}
+
+.edu-title {
+  font-size: 2.6rem;
+  font-weight: 800;
+  text-align: center;
+  margin-bottom: 50px;
+
+  background: linear-gradient(90deg, #2da9ff, #16d3ff);
+  -webkit-background-clip: text;
+  color: transparent;
 }
 
 /* Timeline */
-.timeline {
-  margin-top: 30px;
+.edu-timeline {
   position: relative;
   padding-left: 30px;
 }
 
-.timeline-item {
+.edu-timeline::before {
+  content: "";
+  position: absolute;
+  left: 6px;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: linear-gradient(#122638, #1e4564);
+  opacity: 0.7;
+  border-radius: 20px;
+}
+
+.edu-item {
   position: relative;
   padding-bottom: 40px;
 }
 
-.timeline-dot {
-  width: 14px;
-  height: 14px;
-  background: var(--accent);
+.edu-dot {
+  width: 16px;
+  height: 16px;
+  background: linear-gradient(90deg, #2da9ff, #16d3ff);
   border-radius: 50%;
   position: absolute;
-  left: -5px;
-  top: 8px;
-  box-shadow: 0 0 12px rgba(45,183,255,0.7);
+  left: -2px;
+  top: 2px;
+  box-shadow: 0 0 18px rgba(45, 169, 255, 0.6);
 }
 
-.timeline-line {
-  position: absolute;
-  left: 1px;
-  top: 22px;
-  width: 2px;
-  height: 100%;
-  background: rgba(255,255,255,0.06);
+.edu-card {
+  margin-left: 40px;
+  padding: 24px 26px;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(10px);
+
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.35);
+  transition: 0.3s ease;
 }
 
-.timeline-card {
-  margin-left: 30px;
-  padding: 20px;
-  border-radius: var(--radius);
-  display: flex;
-  gap: 18px;
-  align-items: center;
+.edu-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.45);
 }
 
-.edu-icon-box {
-  width: 48px;
-  height: 48px;
-  border-radius: 10px;
-  background: rgba(45,183,255,0.1);
+.edu-header {
   display: flex;
   align-items: center;
-  justify-content: center;
+  gap: 14px;
 }
 
 .edu-icon {
-  color: var(--accent);
-  font-size: 24px;
+  font-size: 2rem;
+  color: #2da9ff;
 }
 
-.edu-content h3 {
-  margin: 0;
-  font-size: 1.15rem;
-  color: var(--text);
+.edu-school {
+  color: #9ab0d5;
+  font-size: 1rem;
+  margin-top: 2px;
 }
 
-.edu-content .muted {
-  color: var(--muted);
-  margin: 4px 0 10px;
+.edu-period {
+  margin-top: 10px;
+  color: #9bb1d6;
+  font-weight: 600;
 }
 
-.edu-meta {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 16px;
-  color: var(--muted);
-  font-size: 0.95rem;
+.edu-details {
+  margin-top: 8px;
+  color: #cbd8f6;
+  line-height: 1.6;
 }
 
 @media (max-width: 900px) {
-  .timeline {
-    padding-left: 20px;
+  .edu-card {
+    margin-left: 20px;
   }
-  .timeline-card {
-    flex-direction: column;
-    align-items: flex-start;
+
+  .edu-timeline::before {
+    left: 4px;
+  }
+
+  .edu-dot {
+    left: -4px;
   }
 }

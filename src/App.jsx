@@ -15,34 +15,41 @@ export default function App() {
     initReveal();
   }, []);
 
-  return (
-    <>
-      <Navbar />
-      <main>
-        <div className="reveal"><Hero /></div>
+return (
+  <>
+    <Navbar />
+    <main>
 
-        <section className="section reveal"><About /></section>
+      <div className="reveal">
+        <Hero />
+      </div>
 
-        <section className="section reveal" id="education">
-          <Education />
-        </section>
+      <section className="section reveal" id="about">
+        <About />
+      </section>
 
-        <section className="section reveal" id="skills">
-          <Skills />
-        </section>
+      <section className="section reveal" id="education">
+        <Education />
+      </section>
 
-        <section className="section reveal" id="experience">
-          <Experience />
-        </section>
+      <section className="section reveal" id="skills">
+        <Skills />
+      </section>
 
-        <section className="section reveal" id="projects">
-          <Projects />
-        </section>
+      <section className="section reveal" id="experience">
+        <Experience />
+      </section>
 
-        <section className="section reveal" id="contact">
-          <Contact />
-        </section>
-      </main>
-    </>
-  );
+      <section className="section reveal" id="projects">
+        <Projects />
+      </section>
+
+      <section className="section reveal" id="contact">
+        <Contact />
+      </section>
+
+    </main>
+  </>
+);
+
 }

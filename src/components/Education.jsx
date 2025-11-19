@@ -1,53 +1,46 @@
-import "./Experience.css";
+import "./Education.css";
+import { FaGraduationCap } from "react-icons/fa";
 
-const experiences = [
-  {
-    company: "Sopra Steria",
-    role: "Software Developer Intern",
-    period: "Sep 2025 — Nov 2025",
-    bullets: [
-      "Built secure REST APIs using Spring Boot and JWT.",
-      "Optimized PostgreSQL queries and integrated Stripe payments.",
-      "Developed responsive React UI components."
-    ]
-  },
-  {
-    company: "Indian Servers",
-    role: "Web Developer Intern",
-    period: "Jun 2023 — Aug 2023",
-    bullets: [
-      "Developed and optimized UI components to improve load times.",
-      "Worked with React, HTML, CSS and JS to deliver features."
-    ]
-  }
-];
+export default function Education() {
+  const educationData = [
+    {
+      degree: "B.Tech – Computer Science & Engineering",
+      school: "Narayana Engineering College, Nellore",
+      period: "2022 – 2026",
+      details: "Focused on full-stack development, AI/ML and cloud computing."
+    },
+    {
+      degree: "Intermediate – MPC",
+      school: "Narayana Junior College",
+      period: "2020 – 2022",
+      details: "Completed with strong academic performance."
+    }
+  ];
 
-export default function Experience() {
   return (
-    <section id="experience" className="experience-section">
-      <div className="exp-container">
-        
-        <h2 className="exp-title">Experience</h2>
+    <section id="education" className="education-section">
+      <div className="edu-container">
 
-        <div className="timeline">
-          {experiences.map((e, i) => (
-            <div className="timeline-item" key={i}>
-              <div className="timeline-dot"></div>
+        <h2 className="edu-title">Education</h2>
 
-              <div className="exp-card">
-                <div className="exp-header">
-                  <h3>{e.company}</h3>
-                  <span className="exp-period">{e.period}</span>
+        <div className="edu-timeline">
+          {educationData.map((e, i) => (
+            <div className="edu-item" key={i}>
+              <div className="edu-dot"></div>
+
+              <div className="edu-card">
+                <div className="edu-header">
+                  <FaGraduationCap className="edu-icon" />
+                  <div>
+                    <h3>{e.degree}</h3>
+                    <p className="edu-school">{e.school}</p>
+                  </div>
                 </div>
 
-                <div className="exp-role">{e.role} • Remote</div>
-
-                <ul className="exp-bullets">
-                  {e.bullets.map((b, bi) => (
-                    <li key={bi}>{b}</li>
-                  ))}
-                </ul>
+                <p className="edu-period">{e.period}</p>
+                <p className="edu-details">{e.details}</p>
               </div>
+
             </div>
           ))}
         </div>
