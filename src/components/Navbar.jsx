@@ -5,12 +5,11 @@ import "./Navbar.css";
 export default function Navbar() {
   const [activeSection, setActiveSection] = useState("home");
 
-  // Detect active section while scrolling
   useEffect(() => {
     const sections = document.querySelectorAll("section[id]");
 
     const handleScroll = () => {
-      let scrollPos = window.scrollY + 140; // improved accuracy
+      let scrollPos = window.scrollY + 180; // updated offset for fixed navbar
 
       sections.forEach((sec) => {
         if (
@@ -66,15 +65,14 @@ export default function Navbar() {
             href="https://github.com/anas2k5"
             target="_blank"
             rel="noopener noreferrer"
-            aria-label="GitHub Profile"
           >
             <FiGithub />
           </a>
+
           <a
             href="https://www.linkedin.com/in/anas-syed-211816274/"
             target="_blank"
             rel="noopener noreferrer"
-            aria-label="LinkedIn Profile"
           >
             <FiLinkedin />
           </a>

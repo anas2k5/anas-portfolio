@@ -1,20 +1,27 @@
-/* ===============================
-      PREMIUM GLASS NAVBAR
-   =============================== */
+/* ============================================
+   PREMIUM FIXED GLASS NAVBAR (FINAL VERSION)
+   Works perfectly with App.css + all sections
+=============================================== */
 
+/* Use --navbar-height from App.css */
 .navbar {
-  position: sticky;
+  position: fixed;
   top: 0;
+  left: 0;
+  width: 100%;
   z-index: 200;
+
+  height: var(--navbar-height);
 
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
 
   background: rgba(6, 12, 22, 0.55);
   border-bottom: 1px solid rgba(255, 255, 255, 0.04);
-
-  padding: 12px 0;
   box-shadow: 0 8px 26px rgba(0, 0, 0, 0.32);
+
+  display: flex;
+  align-items: center;
 }
 
 /* Inner container */
@@ -23,28 +30,38 @@
   margin: auto;
   padding: 0 28px;
 
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-/* Logo */
+/* -----------------------
+   LOGO
+------------------------ */
 .nav-logo a {
   font-size: 1.45rem;
   font-weight: 800;
   text-decoration: none;
+
   background: linear-gradient(90deg, #2da9ff, #16d3ff);
   -webkit-background-clip: text;
+  background-clip: text;
   color: transparent;
+
   letter-spacing: 0.5px;
 }
 
-/* Menu links */
+/* -----------------------
+   NAV LINKS
+------------------------ */
 .nav-links {
   display: flex;
   align-items: center;
   gap: 32px;
   list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 .nav-links a {
@@ -53,16 +70,18 @@
   text-decoration: none;
   font-weight: 600;
   font-size: 1rem;
+
   padding: 6px 4px;
   transition: 0.25s ease;
 }
 
-/* Hover color */
-.nav-links a:hover {
+/* Hover / active color */
+.nav-links a:hover,
+.nav-links a.active {
   color: #ffffff;
 }
 
-/* Modern glowing underline */
+/* Underline animation */
 .nav-links a::after {
   content: "";
   position: absolute;
@@ -70,6 +89,7 @@
   bottom: -4px;
   width: 0%;
   height: 2px;
+
   background: linear-gradient(90deg, #2da9ff, #16d3ff);
   border-radius: 100px;
   transition: width 0.3s ease;
@@ -80,12 +100,9 @@
   width: 100%;
 }
 
-/* Color for active link */
-.nav-links a.active {
-  color: #ffffff;
-}
-
-/* Contact Button */
+/* -----------------------
+   CONTACT BUTTON
+------------------------ */
 .contact-btn {
   padding: 8px 18px;
   border-radius: 12px;
@@ -105,14 +122,16 @@
   transform: translateY(-2px);
 }
 
-/* Highlight contact when active */
+/* Active state */
 .active-contact {
   background: linear-gradient(90deg, #2da9ff, #16d3ff) !important;
   color: #02111b !important;
   box-shadow: 0 10px 26px rgba(45, 169, 255, 0.25);
 }
 
-/* Social icons */
+/* -----------------------
+   SOCIAL ICONS
+------------------------ */
 .nav-socials {
   display: flex;
   gap: 20px;
@@ -129,12 +148,13 @@
   transform: translateY(-3px);
 }
 
-/* Mobile responsive */
+/* -----------------------
+   RESPONSIVE
+------------------------ */
 @media (max-width: 900px) {
   .nav-links {
     gap: 22px;
   }
-
   .nav-logo a {
     font-size: 1.3rem;
   }

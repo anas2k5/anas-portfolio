@@ -39,6 +39,10 @@
   /* Fonts */
   --ui: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
   --mono: "JetBrains Mono", monospace;
+
+  /* NAVBAR height used to offset sections so fixed navbar won't cover top content
+     If Navbar.css uses a different height, adjust this value to match. */
+  --navbar-height: 72px;
 }
 
 /* -------------------------
@@ -75,8 +79,10 @@ body {
   padding: 0 20px;
 }
 
+/* Use navbar height to offset top of each section so fixed navbar doesn't overlap
+   Individual components (like Hero) can override via their own CSS */
 .section {
-  padding: 80px 0;
+  padding: calc(var(--navbar-height) + 16px) 0; /* default offset + extra spacing */
 }
 
 /* -------------------------
@@ -278,15 +284,13 @@ a:focus, button:focus, .btn:focus {
 }
 
 /* -------------------------
-   Navbar utilities
+   NAVBAR NOTE
+   -------------------------
+   The navbar styles are intentionally NOT included here to avoid conflicts.
+   Please keep your navbar-specific CSS inside `Navbar.css`.
+   Ensure Navbar.css has:
+     .navbar { position: fixed; top: 0; left: 0; width:100%; z-index:200; height: var(--navbar-height); ... }
    ------------------------- */
-.navbar { position: sticky; top: 0; z-index: 100; backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); background: rgba(5,10,20,0.65); border-bottom: 1px solid rgba(255,255,255,0.035); padding: 10px 0; box-shadow: 0 6px 18px rgba(0,0,0,0.4); }
-.nav-inner { max-width: 1300px; margin: 0 auto; padding: 0 20px; display:flex; align-items:center; justify-content:space-between; }
-.nav-logo a { color: var(--text); text-decoration: none; font-weight:800; font-size:1.35rem; }
-.nav-links { display:flex; gap:32px; list-style:none; align-items:center; margin:0; padding:0; }
-.nav-links a { color: var(--muted); text-decoration:none; font-weight:600; padding:6px 4px; transition: color .18s; }
-.nav-links a:hover, .nav-links a.active { color: var(--text); }
-.nav-socials { display:flex; gap:16px; font-size:1.25rem; color:var(--muted); }
 
 /* -------------------------
    Hero tweaks
@@ -330,7 +334,7 @@ a:focus, button:focus, .btn:focus {
 /* -------------------------
    Notes:
    - This single file replaces previous App.css/index.css.
-   - If you have component-level CSS relying on previous variable names,
-     this file keeps most tokens; adjust component CSS only if you changed tokens.
-   - Avoid using global `* { color: ... !important }` — it prevents color variations.
+   - Keep component-level CSS (Navbar.css, Hero.css etc.) for component-specific styles.
+   - Adjust --navbar-height in :root if your Navbar actual height differs.
+   - Avoid duplicate global selectors in component files to prevent overrides.
    ------------------------- */

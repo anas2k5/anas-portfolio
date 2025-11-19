@@ -8,6 +8,8 @@ import Education from "./components/Education";
 import Projects from "./components/Projects";
 import Contact from "./components/Contact";
 import { initReveal } from "./utils/scrollReveal";
+import Footer from "./components/Footer";
+
 import "./App.css";
 
 export default function App() {
@@ -20,9 +22,10 @@ return (
     <Navbar />
     <main>
 
-      <div className="reveal">
-        <Hero />
-      </div>
+      <section className="section" id="home">
+  <Hero />
+</section>
+  {/* <-- no reveal wrapper */}
 
       <section className="section reveal" id="about">
         <About />
@@ -48,8 +51,12 @@ return (
         <Contact />
       </section>
 
+      <Footer />
+
     </main>
   </>
 );
+
+
 
 }
